@@ -11,7 +11,7 @@ package com.pahanez.famtask.domain.executor;
  *
  * Use this class to execute an {@link Interactor}.
  */
-public interface ThreadExecutor {
+public interface BackgroundExecutionThread {
   /**
    * Executes a {@link Runnable}.
    *
