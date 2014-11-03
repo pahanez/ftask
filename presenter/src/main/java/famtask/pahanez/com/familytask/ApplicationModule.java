@@ -6,11 +6,14 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
+import famtask.pahanez.com.familytask.executor.ExecutorModule;
 
 @Module(
-        library = true
+        library = true,
+        includes = {ExecutorModule.class}
 )
 public class ApplicationModule {
+
     private Application mApplication;
 
     public ApplicationModule(Application application){

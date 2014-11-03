@@ -2,6 +2,7 @@ package famtask.pahanez.com.familytask.view.activity;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.view.View;
 
 import java.util.Arrays;
 import java.util.List;
@@ -28,10 +29,21 @@ public class AppActivity extends BaseActivity implements AppActivityView{
 
     }
 
+    public void onCli(View view){
+        mPresenter.loadData();
+    }
+
     @Override
     protected void onResume() {
         super.onResume();
+        mPresenter.resume();
         mPresenter.prepareUI();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mPresenter.pause();
     }
 
     @Override
