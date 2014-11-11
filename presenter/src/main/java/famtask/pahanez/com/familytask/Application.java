@@ -1,7 +1,12 @@
 package famtask.pahanez.com.familytask;
 
+import com.pahanez.famtask.data.service.DataProvider;
+import com.pahanez.famtask.domain.service.DataService;
+
 import java.util.Arrays;
 import java.util.List;
+
+import javax.inject.Inject;
 
 import dagger.ObjectGraph;
 

@@ -3,6 +3,7 @@ package com.pahanez.famtask.domain.service;
 import com.pahanez.famtask.domain.Task;
 import com.pahanez.famtask.domain.exception.ErrorBundle;
 
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -10,7 +11,7 @@ import java.util.List;
  */
 public interface DataService {
 
-    List<Task> getTasksList(TasksLoaderCallback tasksLoaderCallback);
+    void getTasksList(TasksLoaderCallback tasksLoaderCallback);
 
     interface TasksLoaderCallback{
         void onTasksLoaded(List<Task> tasks);

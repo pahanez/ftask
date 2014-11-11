@@ -1,15 +1,18 @@
-package com.pahanez.famtask.domain;
+package com.pahanez.famtask.data.enity;
 
 /**
- * Created by pindziukou on 13.10.14.
+ * Created by pindziukou on 04.11.14.
  */
-public class Task {
+public class TaskEntity implements IdentifiedEntity{
     private String taskId;
     private String taskDescription;
 
-    public Task(){}
+    @Override
+    public String getID() {
+        return taskId;
+    }
 
-    public Task(String taskId){
+    public void setTaskId(String taskId) {
         this.taskId = taskId;
     }
 
@@ -20,13 +23,4 @@ public class Task {
     public void setTaskDescription(String taskDescription) {
         this.taskDescription = taskDescription;
     }
-
-    public String getTaskId() {
-        return taskId;
-    }
-
-    public void setTaskId(String taskId) {
-        this.taskId = taskId;
-    }
-
 }

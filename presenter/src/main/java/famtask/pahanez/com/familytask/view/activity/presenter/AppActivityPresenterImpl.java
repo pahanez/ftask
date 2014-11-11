@@ -39,6 +39,9 @@ public class AppActivityPresenterImpl implements AppActivityPresenter{
             @Override
             public void onTasksLoaded(List<Task> tasks) {
                 android.util.Log.e("p37td8" , "onTasksLoaded " + getTasksUseCase + " " + Thread.currentThread()+ "main looper : " +(Looper.myLooper() == Looper.getMainLooper()));
+                for(Task task : tasks){
+                    android.util.Log.e("p37td8" , "task id  " + task.getTaskId() + "  , task descr : " + task.getTaskDescription());
+                }
             }
 
             @Override
