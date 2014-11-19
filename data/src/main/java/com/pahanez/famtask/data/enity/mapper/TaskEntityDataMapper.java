@@ -26,8 +26,12 @@ public class TaskEntityDataMapper {
   public Task transform(TaskEntity taskEntity) {
     Task task = null;
     if (taskEntity != null) {
-      task = new Task(taskEntity.getID());
-      task.setTaskDescription(taskEntity.getTaskDescription());
+        task = new Task(taskEntity.getID());
+        task.setTaskName(taskEntity.getTaskName());
+        task.setAssignedId(taskEntity.getAssignedId());
+        task.setAssignedName(taskEntity.getAssignedName());
+        task.setTaskId(taskEntity.getID());
+        task.setTaskDescription(taskEntity.getTaskDescription());
     }
 
     return task;

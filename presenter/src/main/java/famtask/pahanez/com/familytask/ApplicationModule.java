@@ -1,12 +1,14 @@
 package famtask.pahanez.com.familytask;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 
 import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
 import famtask.pahanez.com.familytask.executor.ExecutorModule;
+import famtask.pahanez.com.familytask.view.fragment.MainViewFragment;
 
 @Module(
         library = true,
@@ -25,5 +27,7 @@ public class ApplicationModule {
     }
 
     @Provides @Singleton Context provideContext() { return mApplication; }
+
+    @Provides LayoutInflater provideLayoutInflater() { return LayoutInflater.from(mApplication); }
 
 }

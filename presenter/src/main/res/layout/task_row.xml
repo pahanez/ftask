@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerVertical="true"
+        android:id="@+id/task_row_img_layout"
+        android:background="@android:color/black"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/task_row_task_name"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+        android:layout_alignTop="@id/task_row_img_layout"
+        android:layout_toRightOf="@id/task_row_img_layout"
+        android:text="Task Name"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/task_row_task_description"
+        android:layout_alignBottom="@id/task_row_img_layout"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+        android:layout_toRightOf="@id/task_row_img_layout"
+        android:text="Task Description"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+        android:text="Assigned"
+        android:id="@+id/task_row_task_assigned"
+        android:layout_alignTop="@id/task_row_img_layout"
+        android:layout_alignParentRight="true"
+        />
+
+</RelativeLayout>

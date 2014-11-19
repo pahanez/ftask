@@ -24,6 +24,8 @@ package famtask.pahanez.com.familytask.view;
  */
 public interface Presenter {
 
+  void create();
+
   /**
    * Called when the presenter is initialized, this method represents the start of the presenter
    * lifecycle.

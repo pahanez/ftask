@@ -1,18 +1,30 @@
 [
 	{
 		"taskId": "1",
-		"taskDescription": "some task 1"
+		"taskDescription": "Made app from scratch with mvp, dagger, butterknife",
+		"taskName": "Create App",
+		"assignedId": "one",
+		"assignedName": "PashoK"
 	},
 	{
         "taskId": "2",
-    	"taskDescription": "some task 2"
+    	"taskDescription": "Make demo app for Play",
+        "taskName": "Make a demo app",
+        "assignedId": "one",
+        "assignedName": "PashoK"
     },
     {
         "taskId": "3",
-        "taskDescription": "some task 3"
+        "taskDescription": "Born a healthy child",
+        "taskName": "Born a child",
+        "assignedId": "two",
+        "assignedName": "Dobru4ok"
     },
     {
         "taskId": "4",
-        "taskDescription": "some task 4"
+        "taskDescription": "Drink less beer, more vodka!",
+        "taskName": "Stop drinking beer",
+        "assignedId": "one",
+        "assignedName": "Pashok"
     }
 ]

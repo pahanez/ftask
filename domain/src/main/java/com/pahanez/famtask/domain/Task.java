@@ -6,6 +6,9 @@ package com.pahanez.famtask.domain;
 public class Task {
     private String taskId;
     private String taskDescription;
+    private String taskName;
+    private String assignedId;
+    private String assignedName;
 
     public Task(){}
 
@@ -29,4 +32,27 @@ public class Task {
         this.taskId = taskId;
     }
 
+    public String getTaskName() {
+        return taskName;
+    }
+
+    public void setTaskName(String taskName) {
+        this.taskName = taskName;
+    }
+
+    public String getAssignedName() {
+        return assignedName;
+    }
+
+    public void setAssignedName(String assignedName) {
+        this.assignedName = assignedName;
+    }
+
+    public String getAssignedId() {
+        return assignedId;
+    }
+
+    public void setAssignedId(String assignedId) {
+        this.assignedId = assignedId;
+    }
 }

@@ -41,4 +41,6 @@ public interface LoadDataView {
    * Get a {@link android.content.Context}.
    */
   Context getContext();
+
+  boolean isReady();
 }

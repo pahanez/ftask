@@ -13,6 +13,7 @@ import javax.inject.Singleton;
 
 import famtask.pahanez.com.familytask.Application;
 import famtask.pahanez.com.familytask.view.activity.view.AppActivityView;
+import famtask.pahanez.com.familytask.view.renderer.task.TaskCollection;
 
 /**
  * Created by pindziukou on 19.10.14.
@@ -38,10 +39,10 @@ public class AppActivityPresenterImpl implements AppActivityPresenter{
         getTasksUseCase.execute(new GetTasksUseCase.Callback() {
             @Override
             public void onTasksLoaded(List<Task> tasks) {
-                android.util.Log.e("p37td8" , "onTasksLoaded " + getTasksUseCase + " " + Thread.currentThread()+ "main looper : " +(Looper.myLooper() == Looper.getMainLooper()));
                 for(Task task : tasks){
                     android.util.Log.e("p37td8" , "task id  " + task.getTaskId() + "  , task descr : " + task.getTaskDescription());
                 }
+
             }
 
             @Override
@@ -49,6 +50,11 @@ public class AppActivityPresenterImpl implements AppActivityPresenter{
                 android.util.Log.e("p37td8" , "onError " + getTasksUseCase);
             }
         });
+    }
+
+    @Override
+    public void create() {
+        appActivityView.createUI();
     }
 
     @Override
