@@ -8,8 +8,10 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import java.util.Arrays;
@@ -18,11 +20,13 @@ import java.util.List;
 import javax.inject.Inject;
 
 import butterknife.InjectView;
+import butterknife.OnClick;
 import famtask.pahanez.com.familytask.R;
+import famtask.pahanez.com.familytask.libstuff.FloatingActionButton;
+import famtask.pahanez.com.familytask.view.Navigator;
 import famtask.pahanez.com.familytask.view.activity.module.AppActivityModule;
 import famtask.pahanez.com.familytask.view.activity.presenter.AppActivityPresenter;
 import famtask.pahanez.com.familytask.view.activity.view.AppActivityView;
-import famtask.pahanez.com.familytask.view.fragment.module.MainViewFragmentModule;
 
 /**
  * Created by pindziukou on 15.09.14.
@@ -31,14 +35,14 @@ public class AppActivity extends BaseActivity implements AppActivityView{
 
     @Inject
     AppActivityPresenter mPresenter;
+    @Inject
+    Navigator mNavigator;
 
-//    @InjectView(R.id.drawer_lyt) DrawerLayout mDrawerLayout;
-//    @InjectView(R.id.navigationdrawer) ListView mDrawerList;
-//    @InjectView(R.id.tool_bar) Toolbar mToolBar;
 
-    DrawerLayout mDrawerLayout;
-ListView mDrawerList;
-Toolbar mToolBar;
+    @InjectView(R.id.drawer_lyt) DrawerLayout mDrawerLayout;
+    @InjectView(R.id.navigationdrawer) ListView mDrawerList;
+    @InjectView(R.id.tool_bar) Toolbar mToolBar;
+    @InjectView(R.id.fabButton) FloatingActionButton mFloatButton;
 
     private ActionBarDrawerToggle mDrawerToggle;
 
@@ -46,6 +50,7 @@ Toolbar mToolBar;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        injectViews(this);
         mPresenter.create();
 
     }
@@ -71,15 +76,26 @@ Toolbar mToolBar;
 
     @Override
     public void createUI() {
-        mDrawerLayout = (DrawerLayout)findViewById(R.id.drawer_lyt);
-        mDrawerList = (ListView) findViewById(R.id.navigationdrawer);
-        mToolBar = (Toolbar) findViewById(R.id.tool_bar);
+        mNavigator.openMainViewFragment();
 
         setSupportActionBar(mToolBar);
         mToolBar.setNavigationIcon(R.drawable.ic_ab_drawer);
 
         mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, mToolBar, R.string.app_name, R.string.app_name);
         mDrawerLayout.setDrawerListener(mDrawerToggle);
+
+        String [] arrayTypesStr = getResources().getStringArray(R.array.tasks_types);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_expandable_list_item_1,arrayTypesStr);
+        mDrawerList.setAdapter(adapter);
+
+        mFloatButton.setDrawableIcon(res.getDrawable(R.drawable.plus));
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main, menu);
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
@@ -114,6 +130,13 @@ Toolbar mToolBar;
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
+    }
+
+    @OnClick(R.id.fabButton)
+    public void clickFloatButton() {
+        android.util.Log.e("p37td8","click float button");
+        mNavigator.openCreateNewTaskFragment();
+
     }
 
     @Override

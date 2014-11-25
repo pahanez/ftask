@@ -33,7 +33,7 @@ public class GetTasksUseCaseImpl implements GetTasksUseCase{
 
     @Override
     public void run() {
-        MockUtil.sleep(3); //TODO remove
+        MockUtil.sleep(1); //TODO remove
 
         this.dataService.getTasksList(tasksLoaderCallback);
     }

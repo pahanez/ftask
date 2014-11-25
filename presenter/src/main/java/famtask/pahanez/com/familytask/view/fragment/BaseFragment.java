@@ -1,8 +1,8 @@
 package famtask.pahanez.com.familytask.view.fragment;
 
 import android.app.Activity;
-import android.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,7 +20,7 @@ import famtask.pahanez.com.familytask.view.fragment.module.MainViewFragmentModul
 /**
  * Created by pindziukou on 13.11.14.
  */
-public abstract class BaseFragment extends Fragment{
+public abstract class BaseFragment extends Fragment {
 
     private ObjectGraph mFragmentGraph;
 

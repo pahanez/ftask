@@ -5,7 +5,7 @@ android:layout_width="match_parent"
 android:layout_height="match_parent">
 
 
-<LinearLayout
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -29,12 +29,25 @@ android:layout_height="match_parent">
         android:layout_weight="1"
         android:background="@android:color/white" />-->
 
-    <fragment
+    <FrameLayout
         android:layout_width="match_parent"
         android:id="@+id/app_activity_container"
-        android:name="famtask.pahanez.com.familytask.view.fragment.MainViewFragment"
+        android:layout_below="@+id/tool_bar"
         android:layout_height="match_parent" />
-</LinearLayout>
+
+    <famtask.pahanez.com.familytask.libstuff.FloatingActionButton
+        android:id="@+id/fabButton"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="16dp"
+        android:textSize="24sp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="25dp" />
+</RelativeLayout>
 
 <ListView
     android:id="@+id/navigationdrawer"
@@ -47,5 +60,6 @@ android:layout_height="match_parent">
     android:divider="@android:color/white"
     android:dividerHeight="1dp"
     android:drawSelectorOnTop="false"></ListView>
+
 
 </android.support.v4.widget.DrawerLayout>

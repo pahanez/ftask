@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/create_task_name"
+        android:layout_alignParentTop="true"
+        android:hint="@string/task_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="48dp" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/create_task_description"
+        android:layout_below="@id/create_task_name"
+        android:hint="@string/task_description"
+        android:layout_centerHorizontal="true"/>
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/assigned_spinner"
+        android:layout_marginTop="38dp"
+        android:id="@+id/task_assigned_tv"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/create_task_description"
+        />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/create_task_assignee_spinner"
+        android:layout_below="@+id/task_assigned_tv"
+        android:layout_centerHorizontal="true"
+        android:spinnerMode="dropdown" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/create_task_priority"
+        android:layout_marginTop="38dp"
+        android:id="@+id/task_priority_tv"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/create_task_assignee_spinner"
+        />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/create_task_priority_spinner"
+        android:layout_below="@+id/task_priority_tv"
+        android:layout_centerHorizontal="true"
+        android:spinnerMode="dropdown" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add_task_button"
+        android:id="@+id/create_task_add"
+        android:layout_below="@+id/create_task_priority_spinner"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="64dp" />
+
+</RelativeLayout>

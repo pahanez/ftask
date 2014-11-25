@@ -3,6 +3,7 @@ package famtask.pahanez.com.familytask.view.activity;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
@@ -19,13 +20,12 @@ import famtask.pahanez.com.familytask.Application;
 public abstract class BaseActivity extends ActionBarActivity {
 
     private ObjectGraph mActivityGraph;
+    protected Resources res;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        injectViews(this);
-
+        res = getResources();
         mActivityGraph = ((Application)getApplication()).createScopedGraph(getModules().toArray());
         mActivityGraph.inject(this);
 
@@ -56,7 +56,7 @@ public abstract class BaseActivity extends ActionBarActivity {
         fragmentTransaction.commit();
     }
 
-    private void injectViews(final Activity activity) {
+    protected void injectViews(final Activity activity) {
         ButterKnife.inject(this, activity);
     }
 }
