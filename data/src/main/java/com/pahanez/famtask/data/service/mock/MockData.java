@@ -27,6 +27,9 @@ public class MockData {
         loadUserData();
     }
 
+    public MockData(){
+    }
+
     private void loadUserData(){
         Type listTypeTaskEntity = new TypeToken<List<TaskEntity>>() {
         }.getType();

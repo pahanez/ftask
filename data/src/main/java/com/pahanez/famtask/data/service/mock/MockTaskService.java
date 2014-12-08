@@ -5,6 +5,7 @@ import com.pahanez.famtask.data.service.TaskService;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * Created by pindziukou on 04.11.14.
@@ -18,7 +19,15 @@ public class MockTaskService implements TaskService{
 
     @Override
     public TaskEntity createTask(TaskEntity taskEntity) {
-        return mockData.tasks.put(taskEntity.getID(),taskEntity);
+        String id = UUID.randomUUID().toString();
+        taskEntity.setTaskId(id);
+        mockData.tasks.put(taskEntity.getID(),taskEntity);
+        return  taskEntity;
+    }
+
+    @Override
+    public TaskEntity findTask(String id) {
+        return mockData.tasks.get(id);
     }
 
     @Override

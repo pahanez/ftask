@@ -51,4 +51,9 @@ public class TaskEntity implements IdentifiedEntity{
     public void setAssignedName(String assignedName) {
         this.assignedName = assignedName;
     }
+
+    @Override
+    public String toString() {
+        return "id :"+taskId+", taskName: :" + taskName + " taskDescription: " + taskDescription ;
+    }
 }

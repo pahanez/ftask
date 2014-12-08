@@ -10,6 +10,7 @@ import java.util.List;
  */
 public interface TaskService {
     TaskEntity createTask(TaskEntity taskEntity);
+    TaskEntity findTask(String id);
     void removeTask(String id);
     void updateTask(TaskEntity taskEntity);
     Collection<TaskEntity> tasksList();

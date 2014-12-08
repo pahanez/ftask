@@ -9,7 +9,7 @@ import static com.pahanez.famtask.data.service.ServiceUtils.assertNotUIThread;
 
 public class MockProvider implements DataProvider {
 
-    private MockData mockData;
+    private MockData mockData = new MockData();
 
     @Override
     public void open(Context context) {
