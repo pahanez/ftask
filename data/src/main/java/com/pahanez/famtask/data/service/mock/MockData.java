@@ -5,6 +5,7 @@ import android.content.Context;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.pahanez.famtask.data.R;
+import com.pahanez.famtask.data.enity.GroupEntity;
 import com.pahanez.famtask.data.enity.TaskEntity;
 
 import java.io.InputStreamReader;
@@ -20,7 +21,6 @@ import java.util.Map;
 public class MockData {
     private Context context;
     Map<String,TaskEntity> tasks = Collections.synchronizedMap(new HashMap<String, TaskEntity>());
-
     public MockData(Context context){
         this.context = context;
 

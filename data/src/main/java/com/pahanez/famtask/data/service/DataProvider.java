@@ -12,5 +12,6 @@ public interface DataProvider {
     void close();
     UserService getUserService();
     TaskService getTaskService();
+    GroupService getGroupService();
 
 }

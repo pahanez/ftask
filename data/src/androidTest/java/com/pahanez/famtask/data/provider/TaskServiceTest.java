@@ -40,6 +40,8 @@ public class TaskServiceTest extends AndroidTestCase{
 
     @SmallTest
     public void testInitial(){
+        TaskEntity entity = mDataProvider.getTaskService().findTask("2"); //mock_tasks.json
+        assertEquals(entity.getTaskDescription(),"Make demo app for Play"); //mock_tasks.json
         List<TaskEntity> tasksList = new ArrayList<TaskEntity>(mDataProvider.getTaskService().tasksList());
         Assert.assertEquals(DEFAULT_TASKS_LIST_SIZE,tasksList.size());
 

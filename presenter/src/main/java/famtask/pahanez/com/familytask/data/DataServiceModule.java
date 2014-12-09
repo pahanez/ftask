@@ -9,6 +9,8 @@ import com.pahanez.famtask.data.service.mock.MockProvider;
 import com.pahanez.famtask.data.service.mock.MockTaskService;
 import com.pahanez.famtask.domain.service.DataService;
 
+import javax.inject.Singleton;
+
 import dagger.Module;
 import dagger.Provides;
 
@@ -18,7 +20,7 @@ import dagger.Provides;
 @Module(library = true , complete = false)
 public class DataServiceModule {
 
-    @Provides
+    @Provides @Singleton
     DataProvider provideDataProvider(Context context){
         MockProvider mockProvider = new MockProvider();
         mockProvider.open(context);
